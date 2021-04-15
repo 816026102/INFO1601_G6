@@ -1,0 +1,63 @@
+ <!--Navigation Bar-->
+  <nav class="page-bar">
+	<a href="/index.html" class="aboutnav" >Home</a>
+	<a href="htmlref/support.html" class="aboutnav">Support</a>
+  </nav>
+
+<!--Email Contact/Queries-->
+      <div class="container">
+  <div class="contactus-section" style="text-align:center">
+    <style>
+      .h2{
+      color: #AAABB8;
+      text-align: left;
+      text-decoration-style: inherit;
+      font-size: 25px;
+      }
+      p{
+        color:white;
+        text-align: left;
+        font-size:15px;
+        font-family: monospace;
+      }
+      label{
+        color:white;
+        text-align: left;
+        font-size:15px;
+        font-family: monospace;
+      }
+    </style>
+    <h2>Message Us</h2>
+    <p>Queries? Leave a message below.</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/w3images/map.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <br><br>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <br><br>
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="emailaddress" placeholder="Enter email address here">
+        <br><br>
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Trinidad & Tobago</option>
+          <option value="canada">United Kingdom</option>
+          <option value="usa">USA</option>
+        </select>
+        <br><br>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>

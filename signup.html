@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Listing</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head> -->
+
+
+  <body>
+<a href="/index.html" ><h1 class="companyname"> Listing </h1></a>
+
+<section id="firstuserinfo" style="text-align: center">
+
+  
+      <label>
+        <div class="row">
+        <!-- Please enter your First Name -->
+        </div>
+       <div class="row">
+    <form id="newUser" class="col s12">
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="First Name" id="first_name" type="text" required>
+          <br><br>
+        </div>
+        </div>
+      </label>
+      
+
+      <label>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" placeholder="Email" required>
+          <br><br>
+        </div>
+      </div>
+      </label> 
+
+      <label>
+
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password"  placeholder="Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+          <br><br>
+        </div>
+      </div>
+      </label> 
+
+      <label>
+        <div class="row">
+          
+        <label>
+        <a href="/main.html" class="signup"> <input type="submit" value="Sign Up" required/></a>
+        <br><br>
+         </div>
+        </div>
+      </label>
+      </form>
+
+<script>
+function submit(event){
+ event.preventDefault();//prevents page redirection
+     
+ //event target returns the element on which the event is fired upon ie event.target === myForm
+let {first_name, password, email} = event.target.elements;
+
+first_name = first_name.value;
+password = password.value;
+email = email.value;
+
+const data = {first_name, password, email};
+
+
+  postData('https://console.firebase.google.com/u/0/project/apis-e0dc5/database/apis-e0dc5-default-rtdb/data/~2F.json', data);
+  newUser.reset();
+}
+
+
+//attach the submit function to the submit event of myForm    
+
+const newuser = document.querySelector('#newUser');
+newuser.addEventListener('submit', submit);
+
+async function postData(url, data){
+  try{
+
+     let response = await fetch(
+       url, 
+       {
+            method: 'POST',
+            body: JSON.stringify(data),//convert data to JSON string
+          headers: { 'Content-Type':'application/json' }// JSON data
+       },
+     );//1. Send http request and get response
+     
+     let result = await response.text();//2. Get message from response
+     console.log(result);//3. Do something with the message
+   
+   }catch(error){
+     console.log(error);//catch and log any errors
+   }
+}
+
+</script>
+    </section>
+  </body>

@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Listing</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head> -->
+  
+  <body>
+    <style>
+      h1{
+      color: #AAABB8;
+      text-align: left;
+      text-decoration-style: inherit;
+      font-size: 25px;
+      }
+      label{
+        color:white;
+        text-align: left;
+        font-size:15px;
+        font-family: monospace;
+      }
+    </style>
+    <section id="returninguser" style="text-align: center">
+
+      <a href="/index.html"> <h1 class="companyname"> Listing </h1></a>
+      <form id="returnForm" class="col s12">
+
+      <label>
+        E-Mail
+        <br>
+        <input type="email" name="E-mail Address"
+        placeholder="Email" required/>
+      </label> 
+      <br><br>
+
+      <label>
+        Password
+        <br>
+        <input name="password" type="password" placeholder="Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"> 
+        <br><br>
+      </label> 
+
+      <label>
+        <a href="/main.html"> <input type="submit" value="Login" required/></a> 
+      <br>
+
+      <label>
+        <a href="forgottendetails.html"> Forgot your password? </a>
+    </section>
+  </body>
